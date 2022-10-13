@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaForum</title>
+    <link rel="stylesheet" href="/css/style1.css">
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="SlowScroll('#top')">
+            <span>CinemaForum</span>
+        </div>
+        <div id="about">
+            <a href="#" title="Новости" onclick="SlowScroll('#main')">Главная</a>
+            <a href="#" title="Форум" onclick="SlowScroll('#forum')">Форум</a>
+            <a href="#" title="Прокат" onclick="SlowScroll('#prokat')">Прокат</a>
+            <a href="#" title="Авторизация" onclick="SlowScroll('#auth')">Авторизация</a>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Я не ходил в киношколу, я ходил в кино.</h1>
+        <h3>Квентин Тарантино</h3>
+    </div>
+    <div id="main">
+      <div class="intro">
+        <h2>Сайт создан любителями для любителей</h2>
+        <span>Все новинки и ваше мнение</span>
+      </div>
+      <div class="text">
+        <span>Это место, где всем станет ясно, на какой фильм сходить всей семьей, а какой хоррор глянуть перед сном, зачем Тарантино снимает фильмы по главам, и почему в кино такие большие цены на попокорн. Посмотрите наши статьи, присоединитесь к обсуждению и найдите на нашем сайте свой идеальный фильм!</div>
+    </div>
+
+    <div id="forum">
+      <h2>Форум</h2>
+      <h4>Доступен уже сейчас!</h4>
+    </div>
+
+    <div id="prokat">
+      <h2>Прокат сейчас</h2>
+      <h4>Все трейлеры</h4>
+    </div>
+
+    <div id="films">
+      <h2>Фильмы</h2>
+      <h4>Мнение наших пользователей</h4>
+    </div>
+
+    <div id="info">
+      <h6>Сайт создан с целью некоммерческого использования. Код сайта открыт и доступен по ссылке.</h6>
+      <a href="">github</a>
+    </div>
+
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+          $('html, body').animate({
+            scrollTop: $(id).offset().top
+          }, 500);
+        }
+    
+        $(document).on("scroll", function () {
+          if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+          else
+            $("header").attr("class", "fixed");
+        });
+      </script>
+</body>
+</html>
